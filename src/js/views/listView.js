@@ -1,9 +1,9 @@
 import {
-    elements
+  elements
 } from "./base";
 
 export const renderItem = item => {
-    const markup = `
+  const markup = `
   <li class="shopping__item" data-itemid=${item.id}>
     <div class="shopping__count">
       <input type="number" value="${item.count}" step="${
@@ -19,12 +19,12 @@ export const renderItem = item => {
     </button>
   </li>
   `;
-    elements.shopping.insertAdjacentHTML("beforeend", markup);
+  elements.shopping.insertAdjacentHTML("beforeend", markup);
 };
 
 export const deleteItem = id => {
-    const item = document.querySelector(`[data-itemid="${id}"]`);
-    if (item) {
-        item.parentElement.removeChild(item);
-    }
+  const item = document.querySelector(`[data-itemid="${id}"]`);
+  if (item) {
+    item.parentElement.removeChild(item);
+  }
 };
