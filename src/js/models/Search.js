@@ -1,22 +1,24 @@
-import axios from 'axios';
+import axios from "axios";
 import {
-    key,
-    proxy
+  key,
+  proxy
 } from '../config';
 
-
 export default class Search {
-    constructor(query) {
-        this.query = query;
-    }
-    async getResults() {
+  constructor(query) {
+    this._query = query;
+  }
 
-        try {
-            const res = await axios(`${proxy}https://food2fork.com/api/search?key=${key}&q=${this.query}`);
-            this.result = res.data.recipes;
+  async getResults() {
 
-        } catch (error) {
-            alert(error);
-        }
+    //error handling
+    try {
+      const res = await axios(
+        `${proxy}http://food2fork.com/api/search?key=${key}&q=${this._query}`
+      );
+      this._result = res.data.recipes;
+    } catch (err) {
+      console.log(err);
     }
+  }
 }
