@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "start": "webpack-dev-server --mode development --open",
+    "deploy": "gh-pages -d dist"
   },
   "author": "Andrew De La Paz",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "fracty": "^1.0.8",
+    "gh-pages": "^2.0.1",
     "uniqid": "^5.0.3"
   }
 }
